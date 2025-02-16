@@ -22,7 +22,7 @@ app.post('/webhook', async (req, res) => {
 	const { sheetName, timestamp, rowData } = req.body;
 
 	// Add condition for sheet name
-	if (sheetName !== process.env.SHEET_NAME) res.status(200).send('Updated other sheet. No action taken.');
+	if (sheetName !== process.env.SHEET_NAME) return res.status(200).send('Updated other sheet. No action taken.');
 
 	// Check if the minimum required data is provided (to avoid adding empty notes while user is typing/editing information)
 	if (rowData && rowData[0] === '' && rowData[2] === '' && rowData[3] === '') {
