@@ -59,13 +59,13 @@ app.post('/webhook', async (req, res) => {
 		console.log(res);
 
 		// Send success response
-		res.status(200).send('Data received and processed successfully');
+		return res.status(200).send('Data received and processed successfully');
 
 	}).catch((error) => {
 		console.log(error);
 
 		// Send success response
-		res.status(400).send('Error processing/saving data');
+		return res.status(400).send('Error processing/saving data');
 
 	});
 
