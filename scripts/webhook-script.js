@@ -16,7 +16,8 @@ function sendRowToWebhook(e) {
 	// Prepare the payload to send
 	const payload = {
 		timestamp: new Date().toISOString(),
-		rowData: data
+		rowData: data,
+		sheetName: sheet.getName(),
 	};
 
 	// Send the data to the webhook URL
